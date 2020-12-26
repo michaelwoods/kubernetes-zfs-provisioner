@@ -1,4 +1,4 @@
-ARG ARCH
+ARG ARCH=amd64
 FROM ${ARCH}/alpine:3.11
 
 ENTRYPOINT ["kubernetes-zfs-provisioner"]

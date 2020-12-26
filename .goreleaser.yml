@@ -26,18 +26,13 @@ snapshot:
 
 dockers:
 - image_templates:
-  - "michaelwoods/zfs-provisioner:v{{ .Version }}"
-  - "michaelwoods/zfs-provisioner:v{{ .Major }}"
+  - "michaelwoods/zfs-provisioner:v{{ .Version }}-amd64"
   extra_files:
   - docker/zfs.sh
   - docker/update-permissions.sh
   dockerfile: docker/Dockerfile
-  build_flag_templates:
-  - "--build-arg"
-  - "ARCH=amd64"
 - image_templates:
-  - "michaelwoods/zfs-provisioner:v{{ .Version }}"
-  - "michaelwoods/zfs-provisioner:v{{ .Major }}"
+  - "michaelwoods/zfs-provisioner:v{{ .Version }}-arm64v8"
   extra_files:
   - docker/zfs.sh
   - docker/update-permissions.sh
@@ -52,8 +47,6 @@ docker_manifests:
   image_templates:
   - "michaelwoods/zfs-provisioner:v{{ .Version }}-amd64"
   - "michaelwoods/zfs-provisioner:v{{ .Version }}-arm64v8"
-  - "michaelwoods/zfs-provisioner:v{{ .Major }}-amd64"
-  - "michaelwoods/zfs-provisioner:v{{ .Major }}-arm64v8"
 
 changelog:
   sort: asc
